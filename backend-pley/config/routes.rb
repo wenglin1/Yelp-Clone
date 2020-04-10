@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :reviews, only: [:index, :create, :new, :update, :destroy, :show]
+  resources :users, only: [:create, :index, :show]
+  post '/login', to: 'users#login'
+  get '/persist', to: 'users#persist'
 end
