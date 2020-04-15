@@ -10,7 +10,7 @@ class Review extends Component {
             <div className="review-card">
                 <div className="card_content">
                     <div className="card_detail">
-                        <p>{this.props.review.user.username}</p>
+                        <p>User: {this.props.review.user.username}</p>
                         <p>Title: {title}</p>
                         <p>Description: {description}</p>
                     </div>                    

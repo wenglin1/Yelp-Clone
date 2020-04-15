@@ -16,6 +16,7 @@ export function RestaurantPage(props) {
     const [ image, setImage ] = useState()
     const [ restaurantId, setRestaurantId ] = useState()
     
+    
 
     useEffect(() => {
             const fetchData = async () => {
@@ -60,7 +61,7 @@ export function RestaurantPage(props) {
                 <div className={styles['placeholder']}></div>
             </div>
             <Reviews reviews={getReviews()}/>
-            <NewReview restaurantId={restaurantId}/>
+            <NewReview restaurantId={restaurantId} addReview={props.addReview} businessName={businessName}/>
         </div>
     )
 

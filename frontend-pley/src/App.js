@@ -98,13 +98,25 @@ class App extends React.Component {
     })
     .then(r => r.json())
     .then(() => {
-      let filteredArray = this.state.reviews.filter(review => {
+      let filteredArray = this.state.user.reviews.filter(review => {
         return review.id !== id
       })
       this.setState({
-        reviews: filteredArray,
+        user: { ...this.state.user,
+          reviews: filteredArray
+        }
       },
       this.props.history.push("/profile"))      
+    })
+  }
+
+  addReview = (newReview) => {
+    this.setState({
+      reviews: [...this.state.reviews, newReview],
+      user: {
+        ...this.state.user,
+        reviews: [...this.state.user.reviews, newReview]
+      }
     })
   }
 
@@ -121,7 +133,7 @@ class App extends React.Component {
   }
 
   renderRestaurantPage = (routerProps) => {
-    return <RestaurantPage {...routerProps} reviews={this.state.reviews} handleClick={this.handleLogout}/>
+    return <RestaurantPage {...routerProps} reviews={this.state.reviews} handleClick={this.handleLogout} addReview={this.addReview}/>
   }
 
   renderLandingPage = (routerProps) => {
@@ -131,6 +143,7 @@ class App extends React.Component {
   renderSearch = () => {
     return <Search handleClick={this.handleLogout}/>
   }
+
   render () {
     return (
     <Switch>

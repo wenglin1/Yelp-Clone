@@ -3,6 +3,7 @@ import UserProfile from './UserProfile.js';
 import { NavBar } from '../NavBar/NavBar';
 import useReactRouter from 'use-react-router';
 import { useBusinessSearch } from '../hooks/yelp-api/useBusinessSearch';
+import styles from './Profile.module.css'
 
 export function Profile(props) {
     
@@ -32,10 +33,12 @@ export function Profile(props) {
         </div>
         <div id="profile-card">
           <h1>{props.user.username}'s Profile</h1>
+        <div>
           <h3>Restaurant Reviews</h3>
-            <ol>
-              {arrayOfReviews}
-            </ol>
+        </div>
+            <div>
+              {arrayOfReviews}  
+            </div>
         </div>
       </div>
     );

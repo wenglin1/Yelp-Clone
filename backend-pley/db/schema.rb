@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_082534) do
     t.string "title"
     t.string "description"
     t.string "restaurant_id"
+    t.string "restaurant_name"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
