@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SearchResult.module.css';
 import { BusinessRating } from '../../../BusinessRating/BusinessRating';
 import { RestaurantPage } from './RestaurantPage/RestaurantPage';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 
 export function SearchResult(props) {
     
@@ -19,7 +19,7 @@ export function SearchResult(props) {
         <div className={styles['search-result']}>
             <img src={b.image_url} alt='business' className={styles['business-image']}/>
             <div className={styles['business-info']}>
-                <a href={`/business/${b.name}`}><h2 className="subtitle">{b.name}</h2></a>
+                <a href={`/business/${b.id}`}><h2 className="subtitle">{b.name}</h2></a>
                 <BusinessRating reviewCount={b.review_count} rating={b.rating}/>
                 <p>{b.price} {tags}</p>
             </div>

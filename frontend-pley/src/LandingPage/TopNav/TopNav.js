@@ -1,8 +1,28 @@
 import React from 'react';
 import styles from './TopNav.module.css';
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export function TopNav() {
+export function TopNav(props) {
+
+    const handleClick = () => {
+        props.onClick()
+    }
+
+    const userLinks = (
+        <div>
+            <a href="/"><button onClick={handleClick} className={`button ${styles['nav-button']}`}>Log Out</button></a>
+        </div>
+    )
+
+    const guestLinks = (
+        <div>
+            <Link to='/login'><button className={`button ${styles['nav-button']}`}>Log In</button></Link>
+            <Link to='/register'><button className={`button ${styles['nav-button']}`}>Register</button></Link>
+        </div>
+    )
+    
+
+
     return (
         <div className={styles['top-nav']}>
             <div className={styles.left}>
@@ -10,8 +30,7 @@ export function TopNav() {
                 <span>Events</span>
             </div>
             <div className={styles.right}>
-                <NavLink to="/login">Login</NavLink>        
-                <NavLink to="/register">Register</NavLink>        
+                { localStorage.token ? userLinks : guestLinks}
             </div>
         </div>
     );

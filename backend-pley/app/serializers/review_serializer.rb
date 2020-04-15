@@ -1,4 +1,4 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :restaurant_id
-  has_one :user
+  attributes :id, :description, :title, :user_id, :restaurant_id
+  belongs_to :user
 end

@@ -7,9 +7,13 @@ import { Link } from 'react-router-dom'
 export function NavBar(props) {
     
 
+    const handleClick = () => {
+        props.onClick()
+    }
+
     const userLinks = (
         <div>
-            <a href="#"><button className={`button ${styles['nav-button']}`}>Log Out</button></a>
+            <button onClick={handleClick} className={`button ${styles['nav-button']}`}>Log Out</button>
         </div>
     )
     const guestLinks = (
@@ -23,8 +27,8 @@ export function NavBar(props) {
         <div className={styles['nav-bar']}> 
             <Link to='/'><img src={logo} className={styles.logo} alt='pleY logo'/></Link>
             <SearchBar small term={props.term} location={props.location} search={props.search}/>
-            <Link to='/login'><button className={`button ${styles['nav-button']}`}>Log In</button></Link>
-            <Link to='/register'><button className={`button ${styles['nav-button']}`}>Register</button></Link>
+            { localStorage.token ? userLinks : guestLinks }
         </div>
     );
+
 }
