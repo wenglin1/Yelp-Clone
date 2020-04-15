@@ -5,7 +5,6 @@ class Review extends Component {
     render () {
 
         let {title, description} = this.props.review
-        console.log(this.props.review)
 
         return (
             <div className="review-card">

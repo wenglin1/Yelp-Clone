@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './SearchResult.module.css';
 import { BusinessRating } from '../../../BusinessRating/BusinessRating';
-import { RestaurantPage } from './RestaurantPage/RestaurantPage';
-import { NavLink, Route } from 'react-router-dom';
 
 export function SearchResult(props) {
     

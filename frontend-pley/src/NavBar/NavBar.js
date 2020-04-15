@@ -13,6 +13,7 @@ export function NavBar(props) {
 
     const userLinks = (
         <div>
+            <a href="/profile"><button className={`button ${styles['nav-button']}`}>Profile</button></a>
             <button onClick={handleClick} className={`button ${styles['nav-button']}`}>Log Out</button>
         </div>
     )

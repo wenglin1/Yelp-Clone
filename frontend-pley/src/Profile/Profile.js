@@ -6,11 +6,11 @@ import { useBusinessSearch } from '../hooks/yelp-api/useBusinessSearch';
 
 export function Profile(props) {
     
-    let {username, reviews} = props.user
+    console.log(props.reviews) 
 
-    // let arrayOfReviews = reviews.map((review) => {
-    //     return <UserProfile key={review.id} review={review} handleDelete={this.props.handleDelete} />
-    // })
+    let arrayOfReviews = props.user.reviews.map((review) => {
+        return <UserProfile key={review.id} review={review} handleDelete={props.handleDelete} />
+    })
 
     const {location, history} = useReactRouter();
     const params = new URLSearchParams(location.search);
@@ -31,10 +31,10 @@ export function Profile(props) {
             <NavBar search={search} term={term} location={locationParam} onClick={props.handleClick}/> 
         </div>
         <div id="profile-card">
-          <h1>{username}'s Profile</h1>
+          <h1>{props.user.username}'s Profile</h1>
           <h3>Restaurant Reviews</h3>
             <ol>
-
+              {arrayOfReviews}
             </ol>
         </div>
       </div>

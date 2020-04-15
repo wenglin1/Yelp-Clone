@@ -117,7 +117,7 @@ class App extends React.Component {
   }
 
   renderProfile = () => {
-    return <Profile user={this.state.user} handleDelete={this.handleDelete} handleClick={this.handleLogout}/>
+    return <Profile user={this.state.user} handleDelete={this.handleDelete} handleClick={this.handleLogout} reviews={this.state.reviews}/>
   }
 
   renderRestaurantPage = (routerProps) => {

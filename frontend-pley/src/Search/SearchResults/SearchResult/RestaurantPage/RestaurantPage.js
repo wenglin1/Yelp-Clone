@@ -25,7 +25,6 @@ export function RestaurantPage(props) {
                     setbusinessName(resp.name)
                     setImage(resp.image_url)
                     setRestaurantId(resp.id)
-                    console.log(resp.id)
                 } catch(e) {
                     console.error(e);
                 }

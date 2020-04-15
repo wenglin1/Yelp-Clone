@@ -10,7 +10,8 @@ export function TopNav(props) {
 
     const userLinks = (
         <div>
-            <a href="/"><button onClick={handleClick} className={`button ${styles['nav-button']}`}>Log Out</button></a>
+            <a href="/profile"><button className={`button ${styles['nav-button']}`}>Profile</button></a>
+            <button onClick={handleClick} className={`button ${styles['nav-button']}`}>Log Out</button>
         </div>
     )
 
