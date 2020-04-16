@@ -28,7 +28,7 @@ export class Register extends Component {
     let {username, password, name} = this.state
 
     return (
-      <div>
+      <div className={styles["login"]}>
         <Link to='/'><img src={logo} className={styles.logo} alt='pleY logo'/></Link>
         <div>
           if you already have an account : <a href="/login">Login</a>
@@ -36,12 +36,18 @@ export class Register extends Component {
       
         <form onSubmit={this.handleSubmit}>
           <h1>Register</h1>
-          <label htmlFor="name">name:</label>
-          <input type="text" autoComplete="off" name="name" value={name} onChange={this.handleChange}/>
-          <label htmlFor="username">username:</label>
-          <input type="text" autoComplete="off" name="username" value={username} onChange={this.handleChange}/>
-          <label htmlFor="password">password:</label>
-          <input type="password" autoComplete="off" name="password" value={password} onChange={this.handleChange}/>
+          <div>
+            <label htmlFor="name">name:</label>
+            <input type="text" autoComplete="off" name="name" value={name} onChange={this.handleChange}/>
+          </div>
+          <div>
+            <label htmlFor="username">username:</label>
+            <input type="text" autoComplete="off" name="username" value={username} onChange={this.handleChange}/>
+          </div>
+          <div>
+            <label htmlFor="password">password:</label>
+            <input type="password" autoComplete="off" name="password" value={password} onChange={this.handleChange}/>
+          </div>
           <input type="submit" value="Submit"/>
         </form>
       </div>
