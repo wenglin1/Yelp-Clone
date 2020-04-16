@@ -5,7 +5,6 @@ import { SearchResultsSummary } from './SearchResultsSummary/SearchResultsSummar
 import { SearchResults } from './SearchResults/SearchResults';
 import useReactRouter from 'use-react-router';
 import { useBusinessSearch } from '../hooks/yelp-api/useBusinessSearch';
-import { RestaurantPage } from './SearchResults/SearchResult/RestaurantPage/RestaurantPage';
 
 export function Search(props) {
     const {location, history} = useReactRouter();

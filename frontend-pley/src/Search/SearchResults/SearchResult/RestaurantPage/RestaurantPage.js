@@ -43,7 +43,7 @@ export function RestaurantPage(props) {
     const params = new URLSearchParams(location.search);
     const term = params.get('find_desc');
     const locationParam = params.get('find_loc');
-    const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam);
+    const [performSearch] = useBusinessSearch(term, locationParam);
 
     function search(term, location) {
         const encodedTerm = encodeURI(term);
@@ -57,7 +57,7 @@ export function RestaurantPage(props) {
             <NavBar search={search} term={term} location={locationParam} onClick={props.handleClick}/> 
             <div className={styles["restaurant-container"]}>
                 <div>
-                    <img src={`${image}`} className={styles["image"]}></img>
+                    <img src={`${image}`} className={styles["image"]} alt="restaurant"></img>
                     <strong><div className={styles['name']}>{businessName}</div></strong>
                 </div>
                 <div className={styles["reviews"]}>

@@ -17,7 +17,7 @@ export function Profile(props) {
     const params = new URLSearchParams(location.search);
     const term = params.get('find_desc');
     const locationParam = params.get('find_loc');
-    const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam);
+    const [performSearch] = useBusinessSearch(term, locationParam);
 
     function search(term, location) {
         const encodedTerm = encodeURI(term);
