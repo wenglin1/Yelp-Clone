@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import UserProfile from './UserProfile.js';
 import { NavBar } from '../NavBar/NavBar';
 import useReactRouter from 'use-react-router';
@@ -31,15 +31,19 @@ export function Profile(props) {
         <div>
             <NavBar search={search} term={term} location={locationParam} onClick={props.handleClick}/> 
         </div>
-        <div id="profile-card">
-          <h1>{props.user.username}'s Profile</h1>
-        <div>
-          <h3>Restaurant Reviews</h3>
-        </div>
-            <div>
-              {arrayOfReviews}  
+        <div className={styles["profile"]}>
+          <div>
+            <div className={styles["name"]}>
+              <strong>{props.user.username}'s Profile</strong>
             </div>
-        </div>
+          <div className={styles["reviews"]}>
+            Restaurant Reviews
+          </div>
+              <div>
+                {arrayOfReviews}  
+              </div>
+          </div>
+        </div>  
       </div>
     );
   

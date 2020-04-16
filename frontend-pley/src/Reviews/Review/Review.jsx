@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import styles from "./Review.module.css"
 
 class Review extends Component {
 
@@ -7,14 +8,10 @@ class Review extends Component {
         let {title, description} = this.props.review
 
         return (
-            <div className="review-card">
-                <div className="card_content">
-                    <div className="card_detail">
-                        <p>User: {this.props.review.user.username}</p>
-                        <p>Title: {title}</p>
-                        <p>Description: {description}</p>
-                    </div>                    
-                </div>    
+            <div className={styles["box"]}>
+                <p>User: {this.props.review.user.username}</p>
+                <p>Title: {title}</p>
+                <p>Description: {description}</p> 
             </div>
         )
     }

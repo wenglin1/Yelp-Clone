@@ -1,3 +1,23 @@
 .name {
     font-size: 50px;
 }
+
+.image {
+    width: 300px;
+    height: 250px;
+    
+}
+
+.restaurant-container {
+    text-align: center;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.reviews {
+    size: 25px;
+}
+
+.new-review {
+    margin-top: 10px;
+}

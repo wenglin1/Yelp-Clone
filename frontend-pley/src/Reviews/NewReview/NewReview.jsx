@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from "./NewReview.module.css"
 
 class NewReview extends Component {
 
@@ -41,11 +42,15 @@ class NewReview extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <h1>New Review</h1>
-        <label htmlFor="title">Title:</label>
-        <input type="integer" autoComplete="off" name="title" value={title} onChange={this.handleChange}/>
-        <label htmlFor="description">Description:</label>
-        <input type="text" autoComplete="off" name="description" value={description} onChange={this.handleChange}/>
+        <strong><p className={styles["text"]}>New Review</p></strong>
+        <div>
+            <label htmlFor="title">Title: </label>
+            <input type="integer" autoComplete="off" name="title" value={title} onChange={this.handleChange}/>
+        </div>
+        <div>
+            <label htmlFor="description">Description: </label>
+            <input rows="2" className={styles["text-box"]} type="text" autoComplete="off" name="description" value={description} onChange={this.handleChange}/>
+        </div>
         <input type="submit" value="Submit"/>
       </form>
     );

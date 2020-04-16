@@ -55,13 +55,18 @@ export function RestaurantPage(props) {
     return (
         <div>
             <NavBar search={search} term={term} location={locationParam} onClick={props.handleClick}/> 
-            <div className="hi">
-                <img src={`${image}`}></img>
-                <div className={styles['name']}>{businessName}</div>
-                <div className={styles['placeholder']}></div>
+            <div className={styles["restaurant-container"]}>
+                <div>
+                    <img src={`${image}`} className={styles["image"]}></img>
+                    <strong><div className={styles['name']}>{businessName}</div></strong>
+                </div>
+                <div className={styles["reviews"]}>
+                    <Reviews reviews={getReviews()}/>
+                </div>
+                <div className={styles["new-review"]}>
+                    <NewReview restaurantId={restaurantId} addReview={props.addReview} businessName={businessName}/>
+                </div>
             </div>
-            <Reviews reviews={getReviews()}/>
-            <NewReview restaurantId={restaurantId} addReview={props.addReview} businessName={businessName}/>
         </div>
     )
 
